@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agent-tape"
+version = "0.1.0"
+description = "Structured trace recorder + replay for LLM agents"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Ma Xiaoming" }]
+dependencies = []
+
+[tool.setuptools.packages.find]
+include = ["tape*"]
