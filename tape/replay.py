@@ -57,6 +57,10 @@ class Replay:
         self._results = results
         self._cursors: dict[str, int] = defaultdict(int)
 
+    def has(self, name: str, arguments: dict | None = None) -> bool:
+        """Cheaper than call() — peek if a recording exists."""
+        return _key(name, arguments or {}) in self._results
+
     def call(self, name: str, arguments: dict | None = None) -> Any:
         """Look up the recorded result for this call. Raises if missing."""
         k = _key(name, arguments or {})
