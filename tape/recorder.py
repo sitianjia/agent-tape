@@ -109,6 +109,11 @@ class Recorder:
     def model_request(self, **kw) -> int:
         return self.emit("model_request", kw)
 
+    def model_stream_chunk(self, parent_id: int, chunk: str) -> int:
+        """Record one streaming chunk; cheaper than a full response event."""
+        return self.emit("model_response", {"chunk": chunk, "streaming": True},
+                         parent_id=parent_id)
+
     def model_response(self, parent_id: int, elapsed_ms: float, **kw) -> int:
         return self.emit("model_response", kw,
                          parent_id=parent_id, elapsed_ms=elapsed_ms)
