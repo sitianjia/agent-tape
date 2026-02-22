@@ -74,7 +74,7 @@ pip install -e .
 pytest -q
 ```
 
-There's no daemon and no service. The recorder is a single Python class. You can use it from any agent framework — LangChain, LlamaIndex, a hand-rolled loop, whatever.
+There's no daemon and no service. The recorder is a single Python class. You can use it from any agent framework — LangChain, LlamaIndex, AutoGen, a hand-rolled loop, whatever.
 
 ## How it works
 
