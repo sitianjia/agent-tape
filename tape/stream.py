@@ -16,7 +16,10 @@ class JSONLStream:
         self.path = Path(path)
 
     def __iter__(self) -> Iterator[Event]:
-        with self.path.open("r", encoding="utf-8") as f:
+        import gzip
+        opener = (gzip.open if str(self.path).endswith(".gz")
+                  else open)
+        with opener(self.path, "rt", encoding="utf-8") as f:
             for line in f:
                 line = line.strip()
                 if not line:
