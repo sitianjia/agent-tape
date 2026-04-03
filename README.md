@@ -48,7 +48,7 @@ Pretty-print it with the bundled viewer:
 python -m tape.view tapes/today.jsonl
 ```
 
-You get a colored, indented timeline. No web UI, no database, nothing to install.
+You get a colored, indented timeline. No web UI, no database, nothing to install. Tape files compress well; `.jsonl.gz` is also readable.
 
 ## Replay
 
